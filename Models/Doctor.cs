@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace cw11.Models
 {
@@ -9,7 +10,6 @@ namespace cw11.Models
         {
             Prescriptions = new HashSet<Prescription>();
         }
-
         public int IdDoctor { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }

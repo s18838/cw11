@@ -19,12 +19,6 @@ namespace cw11.Configurations
             builder.Property(e => e.Date)
                 .IsRequired();
 
-            builder.Property(e => e.DueDate)
-                .IsRequired();
-
-            builder.Property(e => e.IdPatient)
-                .IsRequired();
-
             builder.HasOne(d => d.Patient)
                 .WithMany(e => e.Prescriptions)
                 .HasForeignKey(d => d.IdPatient)

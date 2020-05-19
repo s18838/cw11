@@ -35,18 +35,21 @@ namespace cw11.Models
             var doctors = new List<Doctor>();
             var doctor1 = new Doctor
             {
+                IdDoctor = 3,
                 FirstName = "Kacper",
                 LastName = "Groszek",
                 Email = "kacper@groshek.com"
             };
             var doctor2 = new Doctor
             {
+                IdDoctor = 1,
                 FirstName = "Kuba",
                 LastName = "Ziemniak",
                 Email = "kuba@ziemniak.com"
             };
             var doctor3 = new Doctor
             {
+                IdDoctor = 2,
                 FirstName = "Rafał",
                 LastName = "Balut",
                 Email = "rafal@balut.com"
@@ -55,18 +58,21 @@ namespace cw11.Models
             var patients = new List<Patient>();
             var patient1 = new Patient
             {
+                IdPatient = 3,
                 FirstName = "Julian",
                 LastName = "Mikołajczyk",
                 Birthdate = DateTime.Parse("20-05-1990")
             };
             var patient2 = new Patient
             {
+                IdPatient = 1,
                 FirstName = "Julian",
                 LastName = "Mikołajczyk",
                 Birthdate = DateTime.Parse("02-01-1995")
             };
             var patient3 = new Patient
             {
+                IdPatient = 2,
                 FirstName = "Julian",
                 LastName = "Mikołajczyk",
                 Birthdate = DateTime.Parse("14-10-2000")
@@ -75,18 +81,21 @@ namespace cw11.Models
             var medicaments = new List<Medicament>();
             var medicament1 = new Medicament
             {
+                IdMedicament = 1,
                 Name = "Paracetamol",
                 Description = "Antivirus",
                 Type = "Liquid"
             };
             var medicament2 = new Medicament
             {
+                IdMedicament = 2,
                 Name = "Amol",
                 Description = "Antivirus",
                 Type = "Liquid"
             };
             var medicament3 = new Medicament
             {
+                IdMedicament = 3,
                 Name = "Strepsils",
                 Description = "Antivirus",
                 Type = "Liquid"
@@ -95,24 +104,27 @@ namespace cw11.Models
             var prescriptions = new List<Prescription>();
             var prescription1 = new Prescription
             {
+                IdPrescription = 2,
                 Date = DateTime.Parse("14-05-2020"),
                 DueDate = DateTime.Parse("14-08-2020"),
-                Doctor = doctor1,
-                Patient = patient1
+                IdDoctor = doctor1.IdDoctor,
+                IdPatient = patient1.IdPatient
             };
             var prescription2 = new Prescription
             {
+                IdPrescription = 3,
                 Date = DateTime.Parse("10-01-2020"),
                 DueDate = DateTime.Parse("10-06-2020"),
-                Doctor = doctor3,
-                Patient = patient2
+                IdDoctor = doctor3.IdDoctor,
+                IdPatient = patient2.IdPatient
             };
             var prescription3 = new Prescription
             {
+                IdPrescription = 1,
                 Date = DateTime.Parse("05-08-2019"),
                 DueDate = DateTime.Parse("05-02-2020"),
-                Doctor = doctor2,
-                Patient = patient3
+                IdDoctor = doctor2.IdDoctor,
+                IdPatient = patient3.IdPatient
             };
 
             var prescriptionMedicaments = new List<PrescriptionMedicament>();
@@ -120,23 +132,23 @@ namespace cw11.Models
             {
                 Dose = 10,
                 Details = "2 razy dziennie",
-                Medicament = medicament2,
-                Prescription = prescription3
+                IdMedicament = medicament2.IdMedicament,
+                IdPrescription = prescription3.IdPrescription
             };
             var prescriptionMedicament2 = new PrescriptionMedicament
             {
 
                 Dose = 3,
                 Details = "4 razy dziennie",
-                Medicament = medicament3,
-                Prescription = prescription1
+                IdMedicament = medicament3.IdMedicament,
+                IdPrescription = prescription1.IdPrescription
             };
             var prescriptionMedicament3 = new PrescriptionMedicament
             {
                 Dose = 1,
                 Details = "3 razy dziennie",
-                Medicament = medicament1,
-                Prescription = prescription2
+                IdMedicament = medicament1.IdMedicament,
+                IdPrescription = prescription2.IdPrescription
             };
 
             doctors.Add(doctor1);

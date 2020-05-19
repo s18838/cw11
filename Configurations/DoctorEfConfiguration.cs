@@ -2,6 +2,7 @@
 using cw11.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Microsoft.EntityFrameworkCore.ValueGeneration;
 
 namespace cw11.Configurations
 {

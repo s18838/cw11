@@ -36,21 +36,32 @@ namespace cw11.Controllers
         [HttpPost]
         public void Post([FromBody]Doctor doctor)
         {
-            _doctorDbService.CreateDoctor(doctor);
+            try
+            {
+                _doctorDbService.CreateDoctor(doctor);
+            }catch (Exception) { }
         }
 
         // PUT api/doctors/2
         [HttpPut("{id}")]
         public void Put(int id, [FromBody]Doctor doctor)
         {
-            _doctorDbService.ChangeDoctor(id, doctor);
+            try
+            {
+                _doctorDbService.ChangeDoctor(id, doctor);
+            }
+            catch (Exception) { }
         }
 
         // DELETE api/doctors/2
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            _doctorDbService.DeleteDoctor(id);
+            try
+            {
+                _doctorDbService.DeleteDoctor(id);
+            }
+            catch (Exception) { }
         }
     }
 }
