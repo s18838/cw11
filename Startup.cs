@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using cw11.Models;
+using cw11.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -31,6 +32,9 @@ namespace cw11
             {
                 options.UseSqlServer("Data Source=db-mssql;Initial Catalog=s18838;Integrated Security=True");
             });
+
+            services.AddTransient<IDoctorDbService, DoctorDbService>();
+
             services.AddControllers();
         }
 

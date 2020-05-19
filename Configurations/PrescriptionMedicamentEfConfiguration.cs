@@ -22,6 +22,12 @@ namespace cw11.Configurations
                 .HasMaxLength(100)
                 .IsRequired();
 
+            builder.Property(e => e.Prescription)
+                .IsRequired();
+
+            builder.Property(e => e.Medicament)
+                .IsRequired();
+
             builder.HasOne(d => d.Prescription)
                 .WithMany(e => e.PrescriptionMedicaments)
                 .HasForeignKey(d => d.IdPrescription)

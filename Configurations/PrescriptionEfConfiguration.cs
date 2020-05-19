@@ -19,8 +19,10 @@ namespace cw11.Configurations
             builder.Property(e => e.Date)
                 .IsRequired();
 
-
             builder.Property(e => e.DueDate)
+                .IsRequired();
+
+            builder.Property(e => e.IdPatient)
                 .IsRequired();
 
             builder.HasOne(d => d.Patient)
@@ -28,6 +30,12 @@ namespace cw11.Configurations
                 .HasForeignKey(d => d.IdPatient)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("Prescription_Patient");
+
+            builder.HasOne(d => d.Doctor)
+                .WithMany(e => e.Prescriptions)
+                .HasForeignKey(d => d.IdDoctor)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("Prescription_Doctor");
         }
     }
 }
